@@ -1,0 +1,7 @@
+{
+  "name": "SiteBAlApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
