@@ -11,6 +11,10 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'escaneo-usuario',
+    loadChildren: () => import('./modals/escaneo-usuario/escaneo-usuario.module').then( m => m.EscaneoUsuarioPageModule)
+  },
 ];
 
 @NgModule({
