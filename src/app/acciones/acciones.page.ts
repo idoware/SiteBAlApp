@@ -5,15 +5,16 @@ import {
   ToastController,
   NavController,
 } from '@ionic/angular';
-import { EscaneoUsuarioPage } from '../modals/escaneo-usuario/escaneo-usuario.page';
+import { ActividadesPage } from '../modals/actividades/actividades.page';
+import { MovimientosPage } from '../modals/movimientos/movimientos.page';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: 'home.page.html',
-  styleUrls: ['home.page.scss'],
+  selector: 'app-acciones',
+  templateUrl: './acciones.page.html',
+  styleUrls: ['./acciones.page.scss'],
 })
-export class HomePage implements OnInit{
-  
+export class AccionesPage implements OnInit {
+
   constructor(
     private modalController: ModalController,
     private alertController: AlertController,
@@ -22,12 +23,22 @@ export class HomePage implements OnInit{
   ) {}
 
   ngOnInit() {
-    console.log("no se como quitarlo");
+    console.log("e");
   }
 
-  async escaneoUsuario(){
+  async actividades(){
     const modal = await this.modalController.create({
-      component: EscaneoUsuarioPage,
+      component: ActividadesPage,
+      componentProps: {
+        componentInstance: this
+      }
+    });
+    return await modal.present();
+  }
+
+  async movimientos(){
+    const modal = await this.modalController.create({
+      component: MovimientosPage,
       componentProps: {
         componentInstance: this
       }
@@ -44,4 +55,5 @@ export class HomePage implements OnInit{
     });
     toast.present();
   }
+
 }

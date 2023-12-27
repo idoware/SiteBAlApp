@@ -14,7 +14,19 @@ const routes: Routes = [
   {
     path: 'escaneo-usuario',
     loadChildren: () => import('./modals/escaneo-usuario/escaneo-usuario.module').then( m => m.EscaneoUsuarioPageModule)
+  },  {
+    path: 'acciones',
+    loadChildren: () => import('./acciones/acciones.module').then( m => m.AccionesPageModule)
   },
+  {
+    path: 'actividades',
+    loadChildren: () => import('./modals/actividades/actividades.module').then( m => m.ActividadesPageModule)
+  },
+  {
+    path: 'movimientos',
+    loadChildren: () => import('./modals/movimientos/movimientos.module').then( m => m.MovimientosPageModule)
+  },
+
 ];
 
 @NgModule({
