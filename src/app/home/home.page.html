@@ -8,7 +8,12 @@
 
 <ion-content [fullscreen]="true" class="ion-text-center ion-padding-top">
   <h2>Escanea tu QR de Usuario</h2>
-  <ion-button (click)="escaneoUsuario()" size="large">
+  <ion-button (click)="scanQR()" size="large">
     <ion-icon slot="icon-only" name="qr-code-outline"></ion-icon>
   </ion-button>
+  <!-- Mostrar el texto escaneado -->
+  <div *ngIf="scannedText">
+    <p>Texto escaneado:</p>
+    <p>{{ scannedText }}</p>
+  </div>
 </ion-content>
